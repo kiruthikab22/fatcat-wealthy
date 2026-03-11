@@ -1,11 +1,24 @@
-const toggle = document.getElementById("menu-toggle")
-const navLinks = document.querySelector(".nav-links")
 
-toggle.addEventListener("click", () => {
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
 
-navLinks.classList.toggle("active")
+hamburger.addEventListener("click", () => {
 
-})
+navMenu.classList.toggle("active");
+
+});
+
+
+/* MOBILE DROPDOWN */
+
+const dropdown = document.querySelector(".dropdown");
+const dropbtn = document.querySelector(".dropbtn");
+
+dropbtn.addEventListener("click", () => {
+
+dropdown.classList.toggle("open");
+
+});
 
  
 const reveals = document.querySelectorAll(".reveal")

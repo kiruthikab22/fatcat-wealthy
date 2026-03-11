@@ -1,8 +1,28 @@
+// const hamburger = document.getElementById("hamburger");
+// const navMenu = document.getElementById("navMenu");
+
+// hamburger.addEventListener("click", () => {
+// navMenu.classList.toggle("active");
+// });
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
 
 hamburger.addEventListener("click", () => {
+
 navMenu.classList.toggle("active");
+
+});
+
+
+/* MOBILE DROPDOWN */
+
+const dropdown = document.querySelector(".dropdown");
+const dropbtn = document.querySelector(".dropbtn");
+
+dropbtn.addEventListener("click", () => {
+
+dropdown.classList.toggle("open");
+
 });
 
 window.addEventListener("load", () => {

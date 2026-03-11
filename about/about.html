@@ -11,50 +11,66 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+
 
     <header class="navbar">
 
-        <div class="container nav-container">
+        <div class="nav-container">
 
             <div class="logo">
                 <img src="assets/logo.png" alt="Fatcat Wealthy">
-
             </div>
 
-            <nav>
+            <nav class="nav-menu" id="navMenu">
 
-                <ul class="nav-links">
+                <a href="../home/home.html">Home</a>
+                <a href="../about/about.html" class="active"> About Us</a>
 
-                    <li><a href="../home/home.html">Home</a></li>
+                <div class="dropdown">
 
-                    <li><a class="active" href="about.html">About Us</a></li>
+                    <a href="../services/service.html" class="dropbtn" id="servicesLink">
+                        Services <span class="arrow">▾</span>
+                    </a>
 
-                    <li><a href="services.html">Services</a></li>
+                    <div class="dropdown-content">
 
-                    <li><a href="academy.html">Academy</a></li>
+                        <div class="submenu">
+                            <a href="#">Investment Broking ▸</a>
 
-                    <li><a href="business.html">Business</a></li>
+                            <div class="submenu-content">
+                                <a href="../services/mutual-fund.html">Mutual Fund</a>
+                                <a href="../services/stock-broking.html">Stock Broking</a>
+                            </div>
+                        </div>
 
-                    <li><a href="careers.html">Careers</a></li>
+                        <a href="../services/insurance.html">Insurance</a>
+                        <a href="../services/loans.html">Loans</a>
+                        <a href="academy.html">Academy</a>
 
-                    <li>
-                        <a class="contact-btn" href="contact.html">
-                            Contact Us
-                        </a>
-                    </li>
+                    </div>
 
-                </ul>
+                </div>
+
+                <a href="academy.html">Academy</a>
+                <a href="business.html">Business</a>
+                <a href="career.html">Career</a>
+
+                <a href="contact.html" class="contact-btn">Contact Us</a>
 
             </nav>
 
-            <div class="menu-toggle" id="menu-toggle">
-                ☰
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
         </div>
@@ -62,7 +78,8 @@
     </header>
 
 
-    
+
+
 
     <!-- HERO SECTION -->
 
@@ -396,13 +413,104 @@
 
 
 
-    <!-- FOOTER -->
-
     <footer class="footer">
 
         <div class="footer-container">
 
-            <!-- COMPANY -->
+            <!-- COMPANY INFO -->
+
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Fatcat Wealthy">
+                </div>
+
+                <p>
+                    We are dedicated to empowering investors through education,
+                    mentorship, and financial planning.
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="https://instagram.com/fatcatwealthy" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://facebook.com/fatcatwealthy" target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://twitter.com/fatcatwealthy" target="_blank">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="https://linkedin.com/company/fatcatwealthy" target="_blank">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-col">
+                <h4>Get In Touch</h4>
+
+                <p>📞 +91 9876543210</p>
+                <p>✉ support@fatcatwealthy.com</p>
+                <p>📍 Chennai, India</p>
+            </div>
+
+
+            <!-- SERVICES ROUTES -->
+
+            <div class="footer-col">
+                <h4>What We Do</h4>
+
+                <ul>
+                    <li><a href="services.html">Mutual Fund</a></li>
+                    <li><a href="broking.html">Investment Broking</a></li>
+                    <li><a href="insurance.html">Insurance</a></li>
+                    <li><a href="academy.html">Academy</a></li>
+                </ul>
+
+            </div>
+
+
+            <!-- COMPANY ROUTES -->
+
+            <div class="footer-col">
+                <h4>Company</h4>
+
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="career.html">Careers</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>© 2026 Fatcat Wealthy. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+
+
+
+    <!-- FOOTER -->
+
+
+    <!-- <footer class="footer">
+
+        <div class="footer-container">
+
+           
 
             <div class="footer-col">
 
@@ -423,7 +531,7 @@
 
 
 
-            <!-- CONTACT -->
+          
 
             <div class="footer-col">
 
@@ -440,7 +548,7 @@
 
 
 
-            <!-- SERVICES -->
+           
 
             <div class="footer-col">
 
@@ -459,8 +567,7 @@
 
 
 
-            <!-- COMPANY -->
-
+   
             <div class="footer-col">
 
                 <h4>Company</h4>
@@ -507,7 +614,7 @@
 
         </div>
 
-    </footer>
+    </footer> -->
 
 
 
