@@ -232,3 +232,44 @@ renderTable(btn.dataset.category);
 /* INITIAL LOAD */
 
 renderTable("sip100");
+
+
+const cards = document.querySelectorAll(".mf-card");
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+},{
+threshold:0.2
+});
+
+cards.forEach(card=>{
+observer.observe(card);
+});
+
+const observer1 = new IntersectionObserver((entries) => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+},{
+threshold:0.2
+});
+
+const elements = document.querySelectorAll(
+".scroll-animate, .fade-left, .fade-right"
+);
+
+elements.forEach(el => observer1.observe(el));

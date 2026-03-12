@@ -909,6 +909,20 @@ transition:.2s;
 background:#f5f9fc;
 }
 
+.table-wrapper{
+width:100%;
+overflow-x:auto;
+}
+
+.table-wrapper::-webkit-scrollbar{
+height:6px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb{
+background:#b9d0df;
+border-radius:10px;
+}
+
 @media(max-width:900px){
 
 .explore-container{
@@ -946,4 +960,273 @@ animation:fadeTable .4s ease;
 @keyframes fadeTable{
 from{opacity:0; transform:translateY(10px)}
 to{opacity:1; transform:translateY(0)}
+}
+
+@media (max-width:768px){
+
+.mf-table th,
+.mf-table td{
+padding:12px;
+font-size:13px;
+white-space:nowrap;
+}
+
+}
+
+.mf-benefits{
+    padding:80px 8%;
+    background:#f6f8f9;
+    padding-top: 10px;
+
+}
+
+.mf-container{
+    max-width:1000px;   /* prevents content stretching */
+    margin:0 auto;      /* centers the section */
+    text-align:center;
+}
+.mf-header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.mf-header h2{
+    font-size:36px;
+    font-weight:700;
+    color:#1d1d1d;
+}
+
+.mf-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto;
+}
+/* cards */
+
+.mf-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    justify-content:center;
+}
+
+.mf-card{
+    background:#d5e6ea;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.08);
+    transition:0.4s ease;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.mf-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.mf-card:hover{
+    transform:translateY(-8px);
+}
+
+.mf-card h3{
+    margin:10px 0;
+    font-size:18px;
+    font-weight:600;
+}
+
+.mf-card p{
+    font-size:14px;
+    line-height:1.6;
+}
+
+.icon{
+    font-size:20px;
+}
+
+/* image */
+
+.mf-image{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.mf-image img{
+    width:100%;
+    max-width:370px;   /* controls image size */
+    height:auto;
+    border-radius:20px;
+}
+
+
+.mf-image img{
+    width:100%;
+    max-width:320px;
+}
+
+.mf-content{
+    align-items:center;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1024px){
+
+.mf-content{
+grid-template-columns:1fr;
+}
+
+.mf-image{
+order:-1;
+max-width:500px;
+margin:auto;
+}
+
+}
+
+@media(max-width:768px){
+
+.mf-header h2{
+font-size:28px;
+}
+
+.mf-cards{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:480px){
+
+.mf-benefits{
+padding:60px 20px;
+}
+
+.mf-header h2{
+font-size:24px;
+}
+
+.mf-card{
+padding:20px;
+}
+
+}
+
+.calculator-section{
+    padding:80px 20px;
+    background:#f4f6f7;
+}
+
+.calculator-container{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+
+.calculator-title{
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:50px;
+}
+
+/* GRID */
+
+.calculator-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+ 
+}
+
+/* BUTTON STYLE */
+
+.calc-btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    padding:16px 20px;
+    border-radius:12px;
+    text-decoration:none;
+    color:#000;
+    font-weight:600;
+    background:#b9d4da;
+    box-shadow:0 6px 12px rgba(0,0,0,0.15);
+    transition:all .3s ease;
+}
+
+
+/* HOVER EFFECT */
+
+.calc-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 18px rgba(0,0,0,0.2);
+    background:#a7c8cf;
+}
+
+/* TABLET */
+
+@media(max-width:900px){
+
+.calculator-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+.calculator-grid{
+grid-template-columns:1fr;
+justify-items:center;
+}
+
+.calc-btn{
+width:260px;
+}
+
+.calculator-title{
+font-size:28px;
+}
+
+}
+
+/* SCROLL ANIMATION BASE */
+
+.scroll-animate{
+opacity:0;
+transform:translateY(60px);
+transition:all 0.8s ease;
+}
+
+/* WHEN ELEMENT IS VISIBLE */
+
+.scroll-animate.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.fade-left{
+opacity:0;
+transform:translateX(-60px);
+transition:all .8s ease;
+}
+
+.fade-right{
+opacity:0;
+transform:translateX(60px);
+transition:all .8s ease;
+}
+
+.fade-left.show,
+.fade-right.show{
+opacity:1;
+transform:translateX(0);
 }
