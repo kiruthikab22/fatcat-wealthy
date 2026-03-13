@@ -16,7 +16,7 @@ if(serviceDropdownLink){
 
     serviceDropdownLink.addEventListener("click", function(e){
 
-        if(window.innerWidth <= 900){
+        if(window.innerWidth <= 700){
             e.preventDefault(); // stop routing
             serviceDropdown.classList.toggle("active");
         }
@@ -56,88 +56,98 @@ el.classList.add("reveal-active");
 });
 
 }
-
-
-
-const investmentInput = document.getElementById("investment");
+const sipInput = document.getElementById("sipAmount");
 const yearsSlider = document.getElementById("years");
 const rateSlider = document.getElementById("rate");
+const stepupSlider = document.getElementById("stepup");
 
 const yearValue = document.getElementById("yearValue");
 const rateValue = document.getElementById("rateValue");
+const stepupValue = document.getElementById("stepupValue");
+
 const resultYears = document.getElementById("resultYears");
 
 const totalValue = document.getElementById("totalValue");
 const investedAmount = document.getElementById("investedAmount");
 const returnsAmount = document.getElementById("returnsAmount");
 
-const ctx = document.getElementById("lumpsumChart").getContext("2d");
-
 let chart;
 
-function calculateLumpsum(){
+function calculateStepUp(){
 
-const principal = Number(investmentInput.value);
-const years = Number(yearsSlider.value);
-const rate = Number(rateSlider.value) / 100;
+let sip = parseFloat(sipInput.value);
+let years = parseInt(yearsSlider.value);
+let rate = parseFloat(rateSlider.value);
+let stepup = parseFloat(stepupSlider.value);
 
-/* FUTURE VALUE FORMULA */
+let monthlyRate = rate / 12 / 100;
 
-const futureValue = principal * Math.pow((1 + rate), years);
+let totalValueCalc = 0;
+let totalInvested = 0;
 
-const returns = futureValue - principal;
+for(let y=0; y<years; y++){
 
-/* UPDATE UI */
+let yearlySip = sip * Math.pow((1 + stepup/100), y);
 
-yearValue.innerText = years;
-rateValue.innerText = rateSlider.value;
-resultYears.innerText = years;
+let futureValue = yearlySip * ((Math.pow(1+monthlyRate,12)-1)/monthlyRate)*(1+monthlyRate);
 
-totalValue.innerText = Math.round(futureValue).toLocaleString();
+totalValueCalc += futureValue;
 
-investedAmount.innerText = principal.toLocaleString();
-returnsAmount.innerText = Math.round(returns).toLocaleString();
-
-/* UPDATE CHART */
-
-updateChart(principal, returns);
+totalInvested += yearlySip * 12;
 
 }
 
-function updateChart(invested, returns){
+let returns = totalValueCalc-totalInvested;
+
+totalValue.innerText = Math.round(totalValueCalc).toLocaleString();
+investedAmount.innerText = Math.round(totalInvested).toLocaleString();
+returnsAmount.innerText = Math.round(returns).toLocaleString();
+
+updateChart(totalInvested,returns);
+
+}
+
+function updateChart(invested,returns){
 
 if(chart) chart.destroy();
 
-chart = new Chart(ctx,{
+const ctx=document.getElementById("stepupSipChart");
 
+chart=new Chart(ctx,{
 type:"doughnut",
-
 data:{
-labels:["Invested Amount","Estimated Returns"],
+labels:["Invested Amount","Returns"],
 datasets:[{
-data:[invested, returns],
-backgroundColor:["#1e8aa0","#555"],
-borderWidth:0
+data:[invested,returns],
+backgroundColor:["#1e8aa0","#555"]
 }]
 },
-
 options:{
-cutout:"70%",
-plugins:{legend:{display:false}},
-animation:{
-duration:900
+responsive:true,
+plugins:{
+legend:{display:false}
 }
-
 }
-
 });
 
 }
 
-/* EVENTS */
+yearsSlider.oninput=()=>{
+yearValue.innerText=yearsSlider.value;
+resultYears.innerText=yearsSlider.value;
+calculateStepUp();
+};
 
-investmentInput.addEventListener("input", calculateLumpsum);
-yearsSlider.addEventListener("input", calculateLumpsum);
-rateSlider.addEventListener("input", calculateLumpsum);
+rateSlider.oninput=()=>{
+rateValue.innerText=rateSlider.value;
+calculateStepUp();
+};
 
-calculateLumpsum();
+stepupSlider.oninput=()=>{
+stepupValue.innerText=stepupSlider.value;
+calculateStepUp();
+};
+
+sipInput.oninput=calculateStepUp;
+
+calculateStepUp();

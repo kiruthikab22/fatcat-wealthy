@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumpsum | Mutual Fund</title>
-    <link rel="stylesheet" href="../lumpsum-calculator/lumpsum.css">
+    <title>Mutual Fund | Fatcat</title>
+    <link rel="stylesheet" href="..//mf-returns-calci/mf-returns.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
@@ -79,7 +79,7 @@
                 ← Back
             </a>
 
-            <h1>Lumpsum Calculator</h1>
+            <h1>Mutual Fund Returns Calculator</h1>
 
             <p>
                 The SIP calculator helps estimate the potential growth of your Systematic
@@ -91,37 +91,34 @@
 
     </section>
 
-    <section class="lumpsum-section">
 
-        <div class="lumpsum-container">
+    <section class="mf-section">
 
-            <h2 class="lumpsum-title">Lumpsum Investment Amount</h2>
+        <div class="mf-container">
 
-            <div class="lumpsum-box">
+            <h2 class="mf-title">Mutual Fund Returns Calculator</h2>
+
+            <div class="mf-box">
 
                 <!-- LEFT INPUT -->
 
-                <div class="lumpsum-left">
+                <div class="mf-left">
 
-                    <h3 class="estimator-title">
+                    <h3 class="mf-estimator-title">
                         <i class="fa-solid fa-calculator"></i>
                         Returns Estimator
                     </h3><br>
 
-                    <p class="estimator-sub">
+                    <p class="mf-estimator-sub">
                         Estimation is based on the past performance
                     </p><br>
 
-                    <div class="amount-box">
-
-                        <label>Enter Amount</label>
-
+                    <div class="mf-amount-box">
+                        <label>Investment Amount</label>
                         <input type="number" id="investment" value="100000">
-
                     </div><br>
 
-
-                    <div class="slider-group">
+                    <div class="mf-slider-group">
 
                         <label>
                             Investment Duration
@@ -132,8 +129,7 @@
 
                     </div>
 
-
-                    <div class="slider-group">
+                    <div class="mf-slider-group">
 
                         <label>
                             Expected Rate of Return
@@ -149,30 +145,30 @@
 
                 <!-- RIGHT RESULT -->
 
-                <div class="lumpsum-right">
+                <div class="mf-right">
 
                     <h3>
                         The total value of your investment after
                         <span id="resultYears">5</span> Years will be
                     </h3>
 
-                    <h1 class="result-value">
+                    <h1 class="mf-result-value">
                         ₹ <span id="totalValue">0</span>
                     </h1>
 
-                    <div class="chart-box">
+                    <div class="mf-chart-box">
 
-                        <canvas id="lumpsumChart"></canvas>
+                        <canvas id="mfChart"></canvas>
 
-                        <div class="legend">
+                        <div class="mf-legend">
 
                             <p>
-                                <span class="color invested"></span>
+                                <span class="mf-color invested"></span>
                                 Invested Amount ₹ <span id="investedAmount"></span>
                             </p>
 
                             <p>
-                                <span class="color returns"></span>
+                                <span class="mf-color returns"></span>
                                 Est. Returns ₹ <span id="returnsAmount"></span>
                             </p>
 
@@ -180,7 +176,7 @@
 
                     </div>
 
-                    <button class="invest-btn">
+                    <button class="mf-invest-btn">
                         Invest Now →
                     </button>
 
@@ -192,7 +188,11 @@
 
     </section>
 
-        <section class="sip-info">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="mf-returns.js"></script>
+
+
+    <section class="sip-info">
 
         <div class="sip-info-container">
 
@@ -239,18 +239,6 @@
         </div>
 
     </section>
-
-
-    
-
-
-
-
-
-
-
-
-
 
 
 
@@ -343,7 +331,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../lumpsum-calculator/lumpsum.js"></script>
+    <script src="../mf-returns-calci/mf-returns.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

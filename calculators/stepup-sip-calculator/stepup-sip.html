@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumpsum | Mutual Fund</title>
-    <link rel="stylesheet" href="../lumpsum-calculator/lumpsum.css">
+    <title>StepUp SIP | Mutual Fund</title>
+    <link rel="stylesheet" href="../stepup-sip-calculator/stepup-sip.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
@@ -79,7 +79,7 @@
                 ← Back
             </a>
 
-            <h1>Lumpsum Calculator</h1>
+            <h1>StepUp SIP Calculator</h1>
 
             <p>
                 The SIP calculator helps estimate the potential growth of your Systematic
@@ -91,108 +91,126 @@
 
     </section>
 
-    <section class="lumpsum-section">
 
-        <div class="lumpsum-container">
+    <section class="stepup-sip-section">
 
-            <h2 class="lumpsum-title">Lumpsum Investment Amount</h2>
+    <div class="stepup-sip-container">
 
-            <div class="lumpsum-box">
+        <h2 class="stepup-sip-title">Step-Up SIP Calculator</h2>
 
-                <!-- LEFT INPUT -->
+        <div class="stepup-sip-box">
 
-                <div class="lumpsum-left">
+            <!-- LEFT INPUT -->
 
-                    <h3 class="estimator-title">
-                        <i class="fa-solid fa-calculator"></i>
-                        Returns Estimator
-                    </h3><br>
+            <div class="stepup-sip-left">
 
-                    <p class="estimator-sub">
-                        Estimation is based on the past performance
-                    </p><br>
+                <h3 class="stepup-estimator-title">
+                    <i class="fa-solid fa-calculator"></i>
+                    Returns Estimator
+                </h3>
 
-                    <div class="amount-box">
+                <p class="stepup-estimator-sub">
+                    Estimation is based on the past performance
+                </p>
 
-                        <label>Enter Amount</label>
+                <div class="stepup-amount-box">
 
-                        <input type="number" id="investment" value="100000">
+                    <label>Monthly SIP Amount</label>
 
-                    </div><br>
-
-
-                    <div class="slider-group">
-
-                        <label>
-                            Investment Duration
-                            <span id="yearValue">5</span> Yrs
-                        </label>
-
-                        <input type="range" id="years" min="1" max="30" value="5">
-
-                    </div>
-
-
-                    <div class="slider-group">
-
-                        <label>
-                            Expected Rate of Return
-                            <span id="rateValue">12</span> %
-                        </label>
-
-                        <input type="range" id="rate" min="1" max="30" value="12">
-
-                    </div>
+                    <input type="number" id="sipAmount" value="5000">
 
                 </div>
 
 
-                <!-- RIGHT RESULT -->
+                <div class="stepup-slider-group">
 
-                <div class="lumpsum-right">
+                    <label>
+                        Investment Duration
+                        <span id="yearValue">10</span> Yrs
+                    </label>
 
-                    <h3>
-                        The total value of your investment after
-                        <span id="resultYears">5</span> Years will be
-                    </h3>
+                    <input type="range" id="years" min="1" max="40" value="10">
 
-                    <h1 class="result-value">
-                        ₹ <span id="totalValue">0</span>
-                    </h1>
+                </div>
 
-                    <div class="chart-box">
 
-                        <canvas id="lumpsumChart"></canvas>
+                <div class="stepup-slider-group">
 
-                        <div class="legend">
+                    <label>
+                        Expected Rate of Return
+                        <span id="rateValue">12</span> %
+                    </label>
 
-                            <p>
-                                <span class="color invested"></span>
-                                Invested Amount ₹ <span id="investedAmount"></span>
-                            </p>
+                    <input type="range" id="rate" min="1" max="30" value="12">
 
-                            <p>
-                                <span class="color returns"></span>
-                                Est. Returns ₹ <span id="returnsAmount"></span>
-                            </p>
+                </div>
 
-                        </div>
 
-                    </div>
+                <div class="stepup-slider-group">
 
-                    <button class="invest-btn">
-                        Invest Now →
-                    </button>
+                    <label>
+                        Annual Step-Up
+                        <span id="stepupValue">10</span> %
+                    </label>
+
+                    <input type="range" id="stepup" min="0" max="20" value="10">
 
                 </div>
 
             </div>
 
+
+            <!-- RIGHT RESULT -->
+
+            <div class="stepup-sip-right">
+
+                <h3>
+                    The total value of your investment after
+                    <span id="resultYears">10</span> Years will be
+                </h3>
+
+                <h1 class="stepup-result-value">
+                    ₹ <span id="totalValue">0</span>
+                </h1>
+
+                <div class="stepup-chart-box">
+
+                    <canvas id="stepupSipChart"></canvas>
+
+                    <div class="stepup-legend">
+
+                        <p>
+                            <span class="stepup-color invested"></span>
+                            Invested Amount ₹ <span id="investedAmount"></span>
+                        </p>
+
+                        <p>
+                            <span class="stepup-color returns"></span>
+                            Est. Returns ₹ <span id="returnsAmount"></span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button class="stepup-invest-btn">
+                    Invest Now →
+                </button>
+
+            </div>
+
         </div>
 
-    </section>
+    </div>
 
-        <section class="sip-info">
+</section>
+
+
+
+
+
+
+    <section class="sip-info">
 
         <div class="sip-info-container">
 
@@ -239,18 +257,6 @@
         </div>
 
     </section>
-
-
-    
-
-
-
-
-
-
-
-
-
 
 
 
@@ -343,9 +349,10 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../lumpsum-calculator/lumpsum.js"></script>
+    <script src="../stepup-sip-calculator/stepup-sip.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <script>
         AOS.init({

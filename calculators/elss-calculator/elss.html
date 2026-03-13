@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumpsum | Mutual Fund</title>
-    <link rel="stylesheet" href="../lumpsum-calculator/lumpsum.css">
+    <title>ELSS | Mutual Fund</title>
+    <link rel="stylesheet" href="../elss-calculator/elss.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
@@ -79,7 +79,7 @@
                 ← Back
             </a>
 
-            <h1>Lumpsum Calculator</h1>
+            <h1>ELSS Calculator</h1>
 
             <p>
                 The SIP calculator helps estimate the potential growth of your Systematic
@@ -91,49 +91,44 @@
 
     </section>
 
-    <section class="lumpsum-section">
+    <section class="elss-section">
 
-        <div class="lumpsum-container">
+        <div class="elss-container">
 
-            <h2 class="lumpsum-title">Lumpsum Investment Amount</h2>
+            <h2 class="elss-title">ELSS Calculator</h2>
 
-            <div class="lumpsum-box">
+            <div class="elss-box">
 
                 <!-- LEFT INPUT -->
 
-                <div class="lumpsum-left">
+                <div class="elss-left">
 
-                    <h3 class="estimator-title">
+                    <h3 class="elss-estimator-title">
                         <i class="fa-solid fa-calculator"></i>
                         Returns Estimator
-                    </h3><br>
+                    </h3>
 
-                    <p class="estimator-sub">
+                    <p class="elss-estimator-sub">
                         Estimation is based on the past performance
-                    </p><br>
+                    </p>
 
-                    <div class="amount-box">
+                    <div class="elss-amount-box">
+                        <label>Investment Amount</label>
+                        <input type="number" id="investment" value="150000">
+                    </div>
 
-                        <label>Enter Amount</label>
-
-                        <input type="number" id="investment" value="100000">
-
-                    </div><br>
-
-
-                    <div class="slider-group">
+                    <div class="elss-slider-group">
 
                         <label>
                             Investment Duration
-                            <span id="yearValue">5</span> Yrs
+                            <span id="yearValue">3</span> Years
                         </label>
 
-                        <input type="range" id="years" min="1" max="30" value="5">
+                        <input type="range" id="years" min="3" max="30" value="3">
 
                     </div>
 
-
-                    <div class="slider-group">
+                    <div class="elss-slider-group">
 
                         <label>
                             Expected Rate of Return
@@ -144,43 +139,59 @@
 
                     </div>
 
+                    <div class="elss-slider-group">
+
+                        <label>
+                            Tax Slab
+                            <span id="taxValue">30</span> %
+                        </label>
+
+                        <input type="range" id="tax" min="5" max="30" step="5" value="30">
+
+                    </div>
+
                 </div>
 
 
                 <!-- RIGHT RESULT -->
 
-                <div class="lumpsum-right">
+                <div class="elss-right">
 
                     <h3>
                         The total value of your investment after
-                        <span id="resultYears">5</span> Years will be
+                        <span id="resultYears">3</span> Years will be
                     </h3>
 
-                    <h1 class="result-value">
+                    <h1 class="elss-result-value">
                         ₹ <span id="totalValue">0</span>
                     </h1>
 
-                    <div class="chart-box">
+                    <div class="elss-chart-box">
 
-                        <canvas id="lumpsumChart"></canvas>
+                        <canvas id="elssChart"></canvas>
 
-                        <div class="legend">
+                        <div class="elss-legend">
 
                             <p>
-                                <span class="color invested"></span>
+                                <span class="elss-color invested"></span>
                                 Invested Amount ₹ <span id="investedAmount"></span>
                             </p>
 
                             <p>
-                                <span class="color returns"></span>
+                                <span class="elss-color returns"></span>
                                 Est. Returns ₹ <span id="returnsAmount"></span>
+                            </p>
+
+                            <p>
+                                <span class="elss-color tax"></span>
+                                Tax Saved ₹ <span id="taxSaved"></span>
                             </p>
 
                         </div>
 
                     </div>
 
-                    <button class="invest-btn">
+                    <button class="elss-invest-btn">
                         Invest Now →
                     </button>
 
@@ -192,16 +203,19 @@
 
     </section>
 
-        <section class="sip-info">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="elss.js"></script>
+
+
+
+    <section class="sip-info">
 
         <div class="sip-info-container">
 
-            <h2>What is an SIP Calculator?</h2>
+            <h2>What is an ELSS Calculator?</h2>
 
             <p>
-                The Systematic Investment Plan Calculator, or a SIP calculator, is a free online financial
-                tool that helps you calculate your returns from SIP investments. You can use it to compare
-                the returns from various SIP investment strategies.
+                An ELSS Calculator is an online tool that helps investors estimate the potential returns from investing in an Equity Linked Savings Scheme (ELSS) mutual fund. It calculates the future value of an investment based on the amount invested, expected rate of return, and investment period. ELSS funds also offer tax benefits under Section 80C of the Income Tax Act, allowing deductions of up to ₹1,50,000 per financial year. The calculator also shows the estimated tax savings based on the investor’s tax slab. It helps investors understand how their investment may grow over time through compounding returns. This tool makes it easier to plan tax-saving investments and compare different investment scenarios before investing.
             </p>
 
             <p>
@@ -221,7 +235,7 @@
                 a more informed decision about which SIP strategy is most viable for you.
             </p>
 
-            <h3>How does SIP Calculator Work?</h3>
+            <h3>How does ELSS Calculator Work?</h3>
 
             <p>Our SIP calculator online takes three main factors into account:</p>
 
@@ -239,18 +253,6 @@
         </div>
 
     </section>
-
-
-    
-
-
-
-
-
-
-
-
-
 
 
 
@@ -343,7 +345,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../lumpsum-calculator/lumpsum.js"></script>
+    <script src="../elss-calculator/elss.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

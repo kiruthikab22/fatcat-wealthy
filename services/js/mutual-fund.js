@@ -273,3 +273,18 @@ const elements = document.querySelectorAll(
 );
 
 elements.forEach(el => observer1.observe(el));
+
+
+const reveals2 = document.querySelectorAll(".reveal");
+
+const observer2 = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+});
+
+reveals2.forEach(el => observer2.observe(el));

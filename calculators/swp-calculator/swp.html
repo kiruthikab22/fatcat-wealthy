@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumpsum | Mutual Fund</title>
-    <link rel="stylesheet" href="../lumpsum-calculator/lumpsum.css">
+    <title>SWP Calculator | MutualFund</title>
+    <link rel="stylesheet" href="../swp-calculator/swp.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
@@ -79,7 +79,7 @@
                 ← Back
             </a>
 
-            <h1>Lumpsum Calculator</h1>
+            <h1>SWP Calculator</h1>
 
             <p>
                 The SIP calculator helps estimate the potential growth of your Systematic
@@ -91,57 +91,55 @@
 
     </section>
 
-    <section class="lumpsum-section">
 
-        <div class="lumpsum-container">
+    <section class="swp-section">
 
-            <h2 class="lumpsum-title">Lumpsum Investment Amount</h2>
+        <div class="swp-container">
 
-            <div class="lumpsum-box">
+            <h2 class="swp-title">SWP Calculator</h2>
+
+            <div class="swp-box">
 
                 <!-- LEFT INPUT -->
 
-                <div class="lumpsum-left">
+                <div class="swp-left">
 
-                    <h3 class="estimator-title">
+                    <h3 class="swp-estimator-title">
                         <i class="fa-solid fa-calculator"></i>
                         Returns Estimator
-                    </h3><br>
+                    </h3>
 
-                    <p class="estimator-sub">
+                    <p class="swp-estimator-sub">
                         Estimation is based on the past performance
-                    </p><br>
+                    </p>
 
-                    <div class="amount-box">
-
-                        <label>Enter Amount</label>
-
-                        <input type="number" id="investment" value="100000">
-
-                    </div><br>
-
-
-                    <div class="slider-group">
-
-                        <label>
-                            Investment Duration
-                            <span id="yearValue">5</span> Yrs
-                        </label>
-
-                        <input type="range" id="years" min="1" max="30" value="5">
-
+                    <div class="swp-amount-box">
+                        <label>Initial Investment</label>
+                        <input type="number" id="investment" value="1000000">
                     </div>
 
+                    <div class="swp-slider-group">
+                        <label>
+                            Monthly Withdrawal
+                            <span id="withdrawValue">10000</span>
+                        </label>
+                        <input type="range" id="withdraw" min="1000" max="100000" value="10000" step="1000">
+                    </div>
 
-                    <div class="slider-group">
-
+                    <div class="swp-slider-group">
                         <label>
                             Expected Rate of Return
                             <span id="rateValue">12</span> %
                         </label>
+                        <input type="range" id="rate" min="1" max="20" value="12">
+                    </div>
 
-                        <input type="range" id="rate" min="1" max="30" value="12">
-
+                    <div class="swp-slider-group">
+                        <label>
+                            Investment Duration
+                            <span id="yearValue">10</span> Years
+                        </label>
+                        <input type="range" id="years" min="1" max="30" value="10">
                     </div>
 
                 </div>
@@ -149,38 +147,42 @@
 
                 <!-- RIGHT RESULT -->
 
-                <div class="lumpsum-right">
+                <div class="swp-right">
 
                     <h3>
-                        The total value of your investment after
-                        <span id="resultYears">5</span> Years will be
+                        After <span id="resultYears">10</span> years your balance will be
                     </h3>
 
-                    <h1 class="result-value">
-                        ₹ <span id="totalValue">0</span>
+                    <h1 class="swp-result-value">
+                        ₹ <span id="remainingValue">0</span>
                     </h1>
 
-                    <div class="chart-box">
+                    <div class="swp-chart-box">
 
-                        <canvas id="lumpsumChart"></canvas>
+                        <canvas id="swpChart"></canvas>
 
-                        <div class="legend">
+                        <div class="swp-legend">
 
                             <p>
-                                <span class="color invested"></span>
-                                Invested Amount ₹ <span id="investedAmount"></span>
+                                <span class="swp-color invested"></span>
+                                Initial Investment ₹ <span id="investedAmount"></span>
                             </p>
 
                             <p>
-                                <span class="color returns"></span>
-                                Est. Returns ₹ <span id="returnsAmount"></span>
+                                <span class="swp-color withdrawn"></span>
+                                Total Withdrawn ₹ <span id="withdrawnAmount"></span>
+                            </p>
+
+                            <p>
+                                <span class="swp-color balance"></span>
+                                Remaining Balance ₹ <span id="balanceAmount"></span>
                             </p>
 
                         </div>
 
                     </div>
 
-                    <button class="invest-btn">
+                    <button class="swp-invest-btn">
                         Invest Now →
                     </button>
 
@@ -192,7 +194,10 @@
 
     </section>
 
-        <section class="sip-info">
+
+
+
+    <section class="sip-info">
 
         <div class="sip-info-container">
 
@@ -239,18 +244,6 @@
         </div>
 
     </section>
-
-
-    
-
-
-
-
-
-
-
-
-
 
 
 
@@ -343,9 +336,10 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../lumpsum-calculator/lumpsum.js"></script>
+    <script src="../swp-calculator/swp.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <script>
         AOS.init({

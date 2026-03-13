@@ -56,3 +56,36 @@ el.classList.add("reveal-active");
 });
 
 }
+
+
+const reveals1 = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+});
+
+reveals1.forEach(el => observer.observe(el));
+
+const scrollElements = document.querySelectorAll(".scroll-animate");
+
+const observer1 = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+});
+
+scrollElements.forEach(el => observer1.observe(el));
