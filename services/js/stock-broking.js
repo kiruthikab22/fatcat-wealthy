@@ -89,3 +89,32 @@ entry.target.classList.add("active");
 });
 
 scrollElements.forEach(el => observer1.observe(el));
+
+const scrollElements1 = document.querySelectorAll(".scroll-animate");
+
+const elementInView = (el, offset = 100) => {
+  const elementTop = el.getBoundingClientRect().top;
+  return elementTop <= window.innerHeight - offset;
+};
+
+const displayScrollElement = (element) => {
+  element.classList.add("active");
+};
+
+const hideScrollElement = (element) => {
+  element.classList.remove("active");
+};
+
+const handleScrollAnimation = () => {
+  scrollElements1.forEach((el) => {
+    if (elementInView(el, 100)) {
+      displayScrollElement(el);
+    } else {
+      hideScrollElement(el);
+    }
+  });
+};
+
+window.addEventListener("scroll", () => {
+  handleScrollAnimation();
+});
